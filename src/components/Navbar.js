@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 function Navbar() {
+  const { cartItems } = useContext(CartContext);
+
   return (
     <nav style={styles.navbar}>
-      <h1 style={styles.logo}>PlantShell</h1>
+      <h1 style={styles.logo}>Hara-Bhara</h1>
       <ul style={styles.navLinks}>
-        <li><Link to="/" style={styles.link}>Home</Link></li>
-        <li><Link to="/products" style={styles.link}>Products</Link></li>
-        <li><Link to="/blog" style={styles.link}>Blog</Link></li>
-        <li><Link to="/cart" style={styles.link}>Cart</Link></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/products">Products</Link></li>
+        <li><Link to="/reviews" style={styles.link}>Reviews</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/cart">Cart ({cartItems.length})</Link></li>
       </ul>
     </nav>
   );
@@ -22,20 +26,16 @@ const styles = {
     alignItems: 'center',
     padding: '1rem 2rem',
     backgroundColor: '#4CAF50',
+    color: '#fff',
   },
   logo: {
-    color: '#fff',
-    textDecoration: 'none',
+    fontSize: '1.5rem',
   },
   navLinks: {
-    listStyleType: 'none',
+    listStyle: 'none',
     display: 'flex',
     gap: '1rem',
   },
-  link: {
-    color: '#fff',
-    textDecoration: 'none',
-  }
 };
 
 export default Navbar;

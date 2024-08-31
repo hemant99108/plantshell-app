@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer style={styles.footer}>
       <div style={styles.container}>
-        <p>© 2024 PlantShell. All rights reserved.</p>
+        <p>© 2024 Hara-Bhara All rights reserved.</p>
         <div style={styles.links}>
           <a href="/about" style={styles.link}>About Us</a>
           <a href="/contact" style={styles.link}>Contact</a>
